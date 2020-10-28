@@ -61,8 +61,8 @@ document.write('La suma es: ', resultado);
 Las arrow functions es una nueva forma que trae Javascript para escribir funciones, para explicar su sintaxis usaré el mismo ejemplo que se usó en la parte de **Funciones que devuelven valores**
 
 ```javascript
-const suma = () => {
-  let n = num1 + num2;
+const suma = (num1, num2) => {
+  let n = num1 + num2; 
   return n;
 }
 
@@ -72,3 +72,33 @@ document.write('La suma es: ', resultado);
 ```
 
 Como se ve en el ejemplo anterior la palabra **function** fue remplazada por una flecha (=>) por eso el nombre de funciones flecha.
+
+## Llamar a una función desde un botón
+
+```javascript
+function alertUser() {
+ alert("Hola");
+}
+```
+
+```html
+<form>
+ <input type="text" name="entry">
+ <input type="button" name="oneButton" value="Press Me!" onClick="alertUser()">
+</form>
+```
+
+Llamado a una función para realizar cambios en objetos del DOM mediante notación de punto
+
+```javascript
+function upperMe() {
+ document.converter.output.value = document.converter.input.value.toUpperCase()
+}
+```
+
+```html
+<FORM NAME="converter">
+ <INPUT TYPE="text" NAME="input" VALUE="sample" onChange="upperMe()"><BR>
+ <INPUT TYPE="text" NAME="output" VALUE="">
+</FORM>
+```
